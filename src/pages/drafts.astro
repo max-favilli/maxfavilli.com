@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatDate, getLatestPostByCategory } from "../lib/content";
+import { buildSeo } from "../lib/seo";
+
+if (import.meta.env.PROD) {
+  return Astro.redirect("/");
+}
+
+const drafts = (await getCollection("posts", ({ data }) => data.draft))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const allPosts = await getCollection("posts", ({ data }) => !data.draft);
+const latestByCategory = getLatestPostByCategory(allPosts);
+
+const seo = buildSeo({
+  title: "Drafts",
+  description: "Draft posts — dev only."
+});
+---
+<BaseLayout seo={seo} latestByCategory={latestByCategory} showSidebar={false}>
+  <section>
+    <div class="archive-head">
+      <p class="eyebrow" style="color: var(--accent);">Dev only — not built in production</p>
+      <h1 class="archive-title">Drafts ({drafts.length})</h1>
+    </div>
+    {drafts.length === 0 ? (
+      <p style="color: var(--muted); font-family: var(--font-prose);">No drafts.</p>
+    ) : (
+      <div class="post-stream">
+        {drafts.map((post) => {
+          const thumb = post.data.thumbImage ?? post.data.coverImage;
+          return (
+            <article class="post-item">
+              <a class="post-link post-thumb" href={`/posts/${post.data.slug}/`} aria-hidden="true" tabindex="-1">
+                <Image
+                  src={thumb}
+                  alt=""
+                  widths={[156, 312, 468]}
+                  sizes="(max-width: 560px) 100vw, 156px"
+                  format="webp"
+                  quality={78}
+                  loading="lazy"
+                />
+              </a>
+              <div class="post-copy">
+                <p class="post-kicker">
+                  <span>{post.data.category}</span>
+                  <span class="post-kicker__sep" aria-hidden="true">&middot;</span>
+                  <span>{formatDate(post.data.pubDate)}</span>
+                </p>
+                <a class="post-link" href={`/posts/${post.data.slug}/`}>
+                  <h2 class="post-title">{post.data.title}</h2>
+                </a>
+                <p class="post-summary">{post.data.summary}</p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    )}
+  </section>
+</BaseLayout>

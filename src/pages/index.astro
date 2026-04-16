@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostListItem from "../components/PostListItem.astro";
+import { getLatestPostByCategory, getPublishedPosts } from "../lib/content";
+import { buildSeo } from "../lib/seo";
+
+const posts = await getPublishedPosts();
+const latestByCategory = getLatestPostByCategory(posts);
+const seo = buildSeo({
+  title: "Home",
+  description:
+    "Max Favilli — notes on IT, AI, investing, politics, movies, and independent thinking."
+});
+---
+<BaseLayout seo={seo} latestByCategory={latestByCategory}>
+  <section aria-label="Latest posts">
+    <div class="post-stream">
+      {posts.map((post) => (
+        <PostListItem post={post} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

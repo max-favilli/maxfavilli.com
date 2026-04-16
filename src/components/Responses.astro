@@ -1,0 +1,64 @@
+---
+import { formatDate } from "../lib/content";
+
+type Response = {
+  author: string;
+  authorUrl?: string;
+  source?: string;
+  sourceUrl?: string;
+  date?: Date;
+  body: string;
+};
+
+type Props = {
+  responses: Response[];
+};
+
+const { responses } = Astro.props;
+
+if (responses.length === 0) return null;
+---
+<section class="responses" aria-label="Selected reader responses">
+  <div class="responses__head">
+    <p class="eyebrow">Responses</p>
+    <h2 class="responses__title">Selected reader replies</h2>
+    <p class="responses__note">
+      Handpicked from the discussion on Substack and LinkedIn. Lightly edited for length.
+    </p>
+  </div>
+
+  <ol class="responses__list">
+    {responses.map((r) => (
+      <li class="response">
+        <blockquote class="response__body">
+          {r.body.split(/\n\s*\n/).map((para) => (
+            <p>{para}</p>
+          ))}
+        </blockquote>
+        <footer class="response__meta">
+          {r.authorUrl ? (
+            <a class="response__author" href={r.authorUrl} target="_blank" rel="noopener noreferrer">{r.author}</a>
+          ) : (
+            <span class="response__author">{r.author}</span>
+          )}
+          {(r.source || r.date) && (
+            <span class="response__source">
+              <span aria-hidden="true" class="response__sep">&middot;</span>
+              {r.sourceUrl ? (
+                <a href={r.sourceUrl} target="_blank" rel="noopener noreferrer">{r.source}</a>
+              ) : (
+                r.source
+              )}
+              {r.date && (
+                <>
+                  <span aria-hidden="true" class="response__sep">&middot;</span>
+                  <time datetime={r.date.toISOString()}>{formatDate(r.date)}</time>
+                </>
+              )}
+            </span>
+          )}
+        </footer>
+      </li>
+    ))}
+  </ol>
+</section>

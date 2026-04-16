@@ -1,0 +1,113 @@
+---
+import { getCollection, render } from "astro:content";
+import { Image, getImage } from "astro:assets";
+import CommentsCta from "../../components/CommentsCta.astro";
+import Responses from "../../components/Responses.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate, getLatestPostByCategory, getPublishedPosts, slugifyCategory } from "../../lib/content";
+import { buildSeo } from "../../lib/seo";
+
+export async function getStaticPaths() {
+  const isDev = import.meta.env.DEV;
+  const posts = await getCollection("posts", ({ data }) => isDev || !data.draft);
+
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const allPosts = await getPublishedPosts();
+const latestByCategory = getLatestPostByCategory(allPosts);
+
+const seoImage = await getImage({
+  src: post.data.coverImage,
+  width: 1200,
+  format: "jpg",
+  quality: 80
+});
+const seoImageUrl = new URL(seoImage.src, Astro.site).toString();
+
+const seo = buildSeo({
+  title: post.data.title,
+  description: post.data.description,
+  image: seoImageUrl,
+  canonical: post.data.canonicalUrl,
+  type: "article",
+  publishedTime: post.data.pubDate.toISOString()
+});
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  image: [seoImageUrl],
+  author: {
+    "@type": "Person",
+    name: "Max Favilli",
+    url: "https://www.linkedin.com/in/maxfavilli/"
+  },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).toString(),
+  articleSection: post.data.category,
+  keywords: post.data.tags.join(", ")
+};
+
+const categoryHref = `/categories/${slugifyCategory(post.data.category)}/`;
+---
+<BaseLayout seo={seo} latestByCategory={latestByCategory}>
+  <article>
+    <header class="article-head">
+      <p class="article-head__kicker">
+        <a href={categoryHref}>{post.data.category}</a>
+      </p>
+      <h1 class="article-title">{post.data.title}</h1>
+      <p class="article-dek">{post.data.summary}</p>
+      <p class="article-meta">
+        <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+      </p>
+    </header>
+
+    <figure class="article-cover">
+      <Image
+        src={post.data.coverImage}
+        alt={post.data.coverAlt}
+        widths={[560, 840, 1120, 1680]}
+        sizes="(max-width: 900px) 100vw, 560px"
+        format="webp"
+        quality={78}
+        loading="eager"
+      />
+    </figure>
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    {post.data.tags.length > 0 && (
+      <div class="inline-tags">
+        {post.data.tags.map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    )}
+  </article>
+
+  <Responses responses={post.data.responses} />
+
+  <CommentsCta substackUrl={post.data.substackUrl} linkedinUrl={post.data.linkedinUrl} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <script>
+    import mediumZoom from "medium-zoom";
+    mediumZoom("article img", {
+      background: "rgba(29, 27, 23, 0.94)",
+      margin: 48,
+      scrollOffset: 0
+    });
+  </script>
+</BaseLayout>

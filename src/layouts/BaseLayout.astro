@@ -1,0 +1,80 @@
+---
+import HeadSeo from "../components/HeadSeo.astro";
+import Sidebar from "../components/Sidebar.astro";
+import { DISPLAY_SITE_TITLE, NAV_SECTIONS, SITE_NAME, SITE_TAGLINE } from "../consts";
+import { slugifyCategory } from "../lib/content";
+import "../styles/global.css";
+import type { Post } from "../types";
+
+type Props = {
+  seo: {
+    title: string;
+    description: string;
+    canonical?: string;
+    image?: string;
+    type?: "website" | "article";
+    publishedTime?: string;
+  };
+  latestByCategory: Record<string, Post>;
+  showSidebar?: boolean;
+};
+
+const { seo, latestByCategory, showSidebar = true } = Astro.props;
+const currentPath = Astro.url.pathname;
+const isCurrent = (href: string) =>
+  href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Josefin+Sans:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="alternate" type="application/rss+xml" title={SITE_NAME} href="/rss.xml" />
+    <HeadSeo {...seo} />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="site-header__avatar" href="/" aria-label={`${SITE_NAME} — home`}>
+          <img src="/images/author/max.jpg" alt="Max Favilli" width="128" height="128" loading="eager" />
+        </a>
+        <div class="site-header__identity">
+          <h1 class="site-title"><a href="/">{DISPLAY_SITE_TITLE}</a></h1>
+          <p class="site-tagline">{SITE_TAGLINE}</p>
+        </div>
+        <nav class="site-nav" aria-label="Sections">
+          <a href="/" aria-current={isCurrent("/") ? "page" : undefined}>Home</a>
+          {NAV_SECTIONS.map((section) => {
+            const href = `/categories/${slugifyCategory(section)}/`;
+            return (
+              <a href={href} aria-current={isCurrent(href) ? "page" : undefined}>{section}</a>
+            );
+          })}
+        </nav>
+      </header>
+
+      <div class:list={["layout-grid", !showSidebar && "layout-grid--single"]}>
+        <main class="main-column">
+          <slot />
+        </main>
+        {showSidebar && <Sidebar latestByCategory={latestByCategory} />}
+      </div>
+
+      <footer class="site-footer">
+        <span>&copy; {new Date().getFullYear()} Max Favilli</span>
+        <span>
+          <a href="/rss.xml">RSS</a>
+          <span aria-hidden="true"> &middot; </span>
+          <a href="https://www.linkedin.com/in/maxfavilli/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </span>
+        <span class="site-footer__colophon">
+          Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a> and <a href="https://claude.ai/code" target="_blank" rel="noopener noreferrer">Claude Code</a>
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>

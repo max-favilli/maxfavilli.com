@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import { formatDate, slugifyCategory } from "../lib/content";
+import type { Post } from "../types";
+
+type Props = {
+  post: Post;
+};
+
+const { post } = Astro.props;
+const href = `/posts/${post.data.slug}/`;
+const categoryHref = `/categories/${slugifyCategory(post.data.category)}/`;
+const thumb = post.data.thumbImage ?? post.data.coverImage;
+---
+<article class="post-item">
+  <a class="post-link post-thumb" href={href} aria-hidden="true" tabindex="-1">
+    <Image
+      src={thumb}
+      alt=""
+      widths={[156, 312, 468]}
+      sizes="(max-width: 560px) 100vw, 156px"
+      format="webp"
+      quality={78}
+      loading="lazy"
+    />
+  </a>
+  <div class="post-copy">
+    <p class="post-kicker">
+      <a href={categoryHref}>{post.data.category}</a>
+      <span class="post-kicker__sep" aria-hidden="true">&middot;</span>
+      <span>{formatDate(post.data.pubDate)}</span>
+    </p>
+    <a class="post-link" href={href}>
+      <h2 class="post-title">{post.data.title}</h2>
+    </a>
+    <p class="post-summary">{post.data.summary}</p>
+  </div>
+</article>

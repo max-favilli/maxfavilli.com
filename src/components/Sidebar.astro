@@ -1,0 +1,58 @@
+---
+import { NAV_SECTIONS, SITE_NAME } from "../consts";
+import { formatDate, slugifyCategory } from "../lib/content";
+import type { Post } from "../types";
+
+type Props = {
+  latestByCategory: Record<string, Post>;
+};
+
+const { latestByCategory } = Astro.props;
+---
+<aside class="sidebar-stack" aria-label="About and latest by section">
+  <section class="sidebar-card sidebar-about">
+    <p class="eyebrow">About</p>
+    <h2 class="sidebar-card__title">{SITE_NAME}</h2>
+    <p class="sidebar-about__body">
+      Max Favilli &mdash; notes from an IT practitioner on AI, investing,
+      politics, movies, and the things worth thinking twice about.
+    </p>
+    <p class="sidebar-about__body">
+      <a
+        class="sidebar-about__link"
+        href="https://www.linkedin.com/in/maxfavilli/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="sidebar-about__logo" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <rect width="24" height="24" rx="3" fill="currentColor"/>
+          <path fill="#f6efdd" d="M8.3 18.6H5.5V9.7h2.8v8.9zM6.9 8.5c-.9 0-1.6-.7-1.6-1.6s.7-1.6 1.6-1.6 1.6.7 1.6 1.6-.7 1.6-1.6 1.6zM18.7 18.6h-2.8v-4.3c0-1 0-2.3-1.4-2.3s-1.6 1.1-1.6 2.3v4.4h-2.8V9.7h2.7v1.2c.4-.7 1.3-1.4 2.6-1.4 2.8 0 3.3 1.9 3.3 4.3v4.8z"/>
+        </svg>
+        <span>Find me on LinkedIn</span>
+      </a>
+    </p>
+  </section>
+
+  {NAV_SECTIONS.map((section) => {
+    const post = latestByCategory[section];
+    const archiveHref = `/categories/${slugifyCategory(section)}/`;
+    return (
+      <section class="sidebar-card">
+        <p class="eyebrow">Latest in {section}</p>
+        {post ? (
+          <article class="sidebar-post">
+            <a href={`/posts/${post.data.slug}/`}>
+              <span class="sidebar-post__title">{post.data.title}</span>
+            </a>
+            <span class="sidebar-post__date">{formatDate(post.data.pubDate)}</span>
+            <a class="sidebar-post__archive" href={archiveHref}>Browse {section} &rarr;</a>
+          </article>
+        ) : (
+          <p class="sidebar-about__body">
+            <a class="sidebar-post__archive" href={archiveHref}>Browse {section} &rarr;</a>
+          </p>
+        )}
+      </section>
+    );
+  })}
+</aside>

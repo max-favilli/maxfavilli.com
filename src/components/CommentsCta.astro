@@ -1,0 +1,37 @@
+---
+type Props = {
+  substackUrl?: string;
+  linkedinUrl?: string;
+};
+
+const { substackUrl, linkedinUrl } = Astro.props;
+const destinations = [
+  substackUrl ? { label: "Comment on Substack", href: substackUrl, key: "substack" } : null,
+  linkedinUrl ? { label: "Discuss on LinkedIn", href: linkedinUrl, key: "linkedin" } : null
+].filter((x): x is { label: string; href: string; key: string } => x !== null);
+---
+<section class="comments-cta" aria-label="Discussion">
+  <div class="comments-cta__inner">
+    <p class="eyebrow">Discussion</p>
+    {destinations.length > 0 ? (
+      <>
+        <p class="comments-cta__lede">
+          Comments for this post live off-site so the conversation stays where readers already are.
+        </p>
+        <div class="comments-cta__actions">
+          {destinations.map((d) => (
+            <a class="comments-cta__button" href={d.href} target="_blank" rel="noopener noreferrer">
+              {d.label}
+              <span aria-hidden="true" class="comments-cta__arrow">&rarr;</span>
+            </a>
+          ))}
+        </div>
+      </>
+    ) : (
+      <p class="comments-cta__lede">
+        This post isn&rsquo;t on Substack or LinkedIn yet &mdash; if you have thoughts, email
+        is the best way to reach me.
+      </p>
+    )}
+  </div>
+</section>
