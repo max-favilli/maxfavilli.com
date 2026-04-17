@@ -15,6 +15,7 @@ coverAlt: Diagonal cartoon confrontation — on one side the NEW BUILD, a develo
 thumbImage: ../../assets/posts/ai-build-vs-buy-thumb.png
 description: Part 2 — why Sonnet 4.6 is a landmark, why prompts will replace code for integration work, and why the build-vs-buy line is moving back toward build.
 linkedinUrl: https://www.linkedin.com/posts/maxfavilli_ai-softwareengineering-buildvsbuy-share-7450878431455612928-EaaU
+substackUrl: https://maxfavilli.substack.com/p/the-future-of-ai-part-2
 draft: false
 ---
 
