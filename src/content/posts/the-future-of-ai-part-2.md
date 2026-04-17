@@ -14,6 +14,7 @@ coverImage: ../../assets/posts/ai-build-vs-buy.png
 coverAlt: Diagonal cartoon confrontation — on one side the NEW BUILD, a developer orchestrating concurrent AI coding agents producing bespoke, context-aware systems on demand; on the other the OLD BUY, a fortified castle of SaaS vendors with a crowned king, integration fees, and exit tolls, where rigid APIs and consulting bottlenecks are inherited and hard to leave.
 thumbImage: ../../assets/posts/ai-build-vs-buy-thumb.png
 description: Part 2 — why Sonnet 4.6 is a landmark, why prompts will replace code for integration work, and why the build-vs-buy line is moving back toward build.
+linkedinUrl: https://www.linkedin.com/posts/maxfavilli_ai-softwareengineering-buildvsbuy-share-7450878431455612928-EaaU
 draft: false
 ---
 
