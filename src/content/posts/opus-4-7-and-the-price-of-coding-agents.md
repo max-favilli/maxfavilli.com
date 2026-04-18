@@ -13,6 +13,8 @@ tags:
 coverImage: ../../assets/posts/opus-4-7-cli-switch.png
 coverAlt: Cartoon of a frazzled developer at a retro keyboard typing /model claude-opus-4-6 into a CLI terminal, with a Code and Coffee mug and Java for Dummies on the shelf.
 description: "The sycophancy problem, the compute crunch, and why coding agents will not stay cheap."
+linkedinUrl: https://www.linkedin.com/posts/maxfavilli_if-you-are-a-claude-code-user-%F0%9D%97%BA%F0%9D%97%BC%F0%9D%97%B1%F0%9D%97%B2%F0%9D%97%B9-share-7451269700082249728-IK7a
+substackUrl: https://maxfavilli.substack.com/p/opus-47-the-best-model-nobody-likes
 draft: false
 ---
 
