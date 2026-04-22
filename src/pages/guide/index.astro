@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from "astro:content";
+import GuideNav from "../../components/GuideNav.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getLatestPostByCategory, getPublishedPosts } from "../../lib/content";
+import { buildSeo } from "../../lib/seo";
+import { GUIDE_TITLE, GUIDE_SUBTITLE } from "../../consts";
+
+const allChapters = await getCollection("guide");
+const chapters = allChapters.map((c) => c.data).sort((a, b) => a.order - b.order);
+
+const intro = allChapters.find((c) => c.data.slug === "introduction");
+if (!intro) throw new Error("Guide introduction not found");
+const { Content } = await render(intro);
+
+const allPosts = await getPublishedPosts();
+const latestByCategory = getLatestPostByCategory(allPosts);
+
+const seo = buildSeo({
+  title: `${GUIDE_TITLE}: ${GUIDE_SUBTITLE}`,
+  description: intro.data.description,
+  type: "website"
+});
+---
+<BaseLayout seo={seo} latestByCategory={latestByCategory} showSidebar={false}>
+  <div class="guide-layout">
+    <article class="guide-content">
+      <header class="article-head">
+        <p class="article-head__kicker">Guide</p>
+        <h1 class="article-title">{GUIDE_TITLE}</h1>
+        <p class="article-dek">{GUIDE_SUBTITLE}</p>
+      </header>
+
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+    <GuideNav chapters={chapters} currentSlug="introduction" />
+  </div>
+</BaseLayout>

@@ -1,0 +1,67 @@
+---
+import { getCollection, render } from "astro:content";
+import GuideNav from "../../components/GuideNav.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getLatestPostByCategory, getPublishedPosts } from "../../lib/content";
+import { buildSeo } from "../../lib/seo";
+import { GUIDE_TITLE } from "../../consts";
+
+export async function getStaticPaths() {
+  const allChapters = await getCollection("guide");
+  return allChapters
+    .filter((c) => c.data.slug !== "introduction")
+    .map((chapter) => ({
+      params: { slug: chapter.data.slug },
+      props: { chapter }
+    }));
+}
+
+const { chapter } = Astro.props;
+const { Content } = await render(chapter);
+
+const allChapters = await getCollection("guide");
+const sortedChapters = allChapters.map((c) => c.data).sort((a, b) => a.order - b.order);
+const currentIndex = sortedChapters.findIndex((c) => c.slug === chapter.data.slug);
+const prev = currentIndex > 0 ? sortedChapters[currentIndex - 1] : null;
+const next = currentIndex < sortedChapters.length - 1 ? sortedChapters[currentIndex + 1] : null;
+const total = sortedChapters.length;
+
+const allPosts = await getPublishedPosts();
+const latestByCategory = getLatestPostByCategory(allPosts);
+
+const seo = buildSeo({
+  title: `${chapter.data.title} — ${GUIDE_TITLE}`,
+  description: chapter.data.description,
+  type: "article"
+});
+---
+<BaseLayout seo={seo} latestByCategory={latestByCategory} showSidebar={false}>
+  <div class="guide-layout">
+    <article class="guide-content">
+      <header class="article-head">
+        <p class="article-head__kicker"><a href="/guide/">Guide</a></p>
+        <h1 class="article-title">{chapter.data.title}</h1>
+        <p class="article-dek">{chapter.data.description}</p>
+        <p class="article-meta">Chapter {chapter.data.order} of {total}</p>
+      </header>
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      <nav class="guide-pager">
+        {prev && (
+          <a href={prev.slug === "introduction" ? "/guide/" : `/guide/${prev.slug}/`} class="guide-pager__prev">
+            &larr; {prev.title}
+          </a>
+        )}
+        {next && (
+          <a href={`/guide/${next.slug}/`} class="guide-pager__next">
+            {next.title} &rarr;
+          </a>
+        )}
+      </nav>
+    </article>
+    <GuideNav chapters={sortedChapters} currentSlug={chapter.data.slug} />
+  </div>
+</BaseLayout>

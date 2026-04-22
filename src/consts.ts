@@ -14,6 +14,9 @@ export const SITE_DESCRIPTION =
 export const CONTACT_EMAIL =
   import.meta.env.PUBLIC_CONTACT_EMAIL || "hello@example.com";
 
+export const GUIDE_TITLE = "Agentic Engineering";
+export const GUIDE_SUBTITLE = "a practical guide";
+
 export const NAV_SECTIONS = [
   "IT",
   "AI",

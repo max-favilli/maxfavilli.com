@@ -1,0 +1,27 @@
+---
+type Props = {
+  chapters: Array<{ slug: string; title: string; order: number }>;
+  currentSlug: string;
+};
+
+const { chapters, currentSlug } = Astro.props;
+const sorted = [...chapters].sort((a, b) => a.order - b.order);
+---
+<nav class="guide-nav" aria-label="Guide chapters">
+  <p class="eyebrow"><a href="/guide/">Guide</a></p>
+  <h2 class="guide-nav__title">
+    <a href="/guide/">Agentic Engineering</a>
+  </h2>
+  <ol class="guide-nav__list">
+    {sorted.map((ch) => (
+      <li>
+        <a
+          href={ch.slug === "introduction" ? "/guide/" : `/guide/${ch.slug}/`}
+          aria-current={ch.slug === currentSlug ? "page" : undefined}
+        >
+          {ch.title}
+        </a>
+      </li>
+    ))}
+  </ol>
+</nav>

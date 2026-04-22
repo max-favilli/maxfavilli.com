@@ -42,4 +42,14 @@ const posts = defineCollection({
     })
 });
 
-export const collections = { posts };
+const guide = defineCollection({
+  loader: glob({ base: "./src/content/guide", pattern: "**/*.md" }),
+  schema: z.object({
+    title: z.string(),
+    slug: z.string(),
+    order: z.number(),
+    description: z.string().max(220)
+  })
+});
+
+export const collections = { posts, guide };
