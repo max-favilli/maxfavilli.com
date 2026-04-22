@@ -88,29 +88,21 @@ Fundamental, non-negotiable rules. Ordered by priority — higher laws override 
 
 ```
 agentic-engineering/
-├── PLUGIN.md                          # Plugin metadata and description
-├── CLAUDE.md                          # Base instructions injected into every project
+├── PLUGIN.md
+├── CLAUDE.md
 ├── laws/
-│   └── seven-laws.md                  # The Seven Laws, formatted for CLAUDE.md inclusion
+│   └── seven-laws.md
 ├── skills/
-│   ├── audit-claude-md/
-│   │   └── SKILL.md                   # Check and update project CLAUDE.md
-│   ├── design-session/
-│   │   └── SKILL.md                   # Start a design session (produce documents, no code)
-│   ├── coding-session/
-│   │   └── SKILL.md                   # Start a coding session (consume plan, produce code)
-│   ├── explore/
-│   │   └── SKILL.md                   # Explore before edit — map the area, report findings
-│   ├── spec/
-│   │   └── SKILL.md                   # Generate a spec with test cases from description
-│   ├── checkpoint/
-│   │   └── SKILL.md                   # Session checkpoint — update roadmap, persist decisions
-│   ├── fresh-start/
-│   │   └── SKILL.md                   # Doom loop escape — persist state, recommend clean session
-│   └── review/
-│       └── SKILL.md                   # Pre-commit review — tests, linting, ELI5 check, diff review
+│   ├── audit-claude-md/SKILL.md
+│   ├── design-session/SKILL.md
+│   ├── coding-session/SKILL.md
+│   ├── explore/SKILL.md
+│   ├── spec/SKILL.md
+│   ├── checkpoint/SKILL.md
+│   ├── fresh-start/SKILL.md
+│   └── review/SKILL.md
 └── hooks/
-    └── hooks.json                     # Enforcement hooks (pre-commit gates, doom loop detection)
+    └── hooks.json
 ```
 
 ---

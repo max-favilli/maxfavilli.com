@@ -386,13 +386,15 @@ img { display: block; max-width: 100%; }
 .prose pre {
   background: #2b2520;
   color: #e8dfd0;
-  padding: 1.2em 1.4em;
+  padding: 1em 1.2em;
   border-radius: 4px;
   overflow-x: auto;
   font-family: "SFMono-Regular", "Consolas", monospace;
-  font-size: 0.85em;
-  line-height: 1.6;
+  font-size: 0.75em;
+  line-height: 1.5;
   margin: 1.4em 0;
+  tab-size: 2;
+  -moz-tab-size: 2;
 }
 .prose pre code {
   background: none;
