@@ -29,6 +29,7 @@ Each document builds on the previous one.
 5. **[Tooling](/guide/tooling/)** — CLI vs. IDE extensions. Plugins vs. project docs. claude-mem, MCP integrations, and what they actually replace (and do not).
 6. **[Token economy](/guide/token-economy/)** — Where tokens go, what is worth spending them on, and why ELI5 comments pay for themselves.
 7. **[Team playbook](/guide/team-playbook/)** — Shared agent instructions, code review practices, CI/CD, git hygiene, and a day-one guide for new team members.
+8. **[Plugin plan](/guide/plugin-plan/)** — Draft plan for a Claude Code plugin that encodes this methodology as enforceable skills and hooks. The Seven Laws.
 
 ## What changes and what does not
 
