@@ -383,6 +383,23 @@ img { display: block; max-width: 100%; }
 }
 .prose ul, .prose ol { padding-left: 1.3em; }
 .prose li { margin: 0.35em 0; }
+.prose pre {
+  background: #2b2520;
+  color: #e8dfd0;
+  padding: 1.2em 1.4em;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: "SFMono-Regular", "Consolas", monospace;
+  font-size: 0.85em;
+  line-height: 1.6;
+  margin: 1.4em 0;
+}
+.prose pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+}
 .prose code {
   font-family: "SFMono-Regular", "Consolas", monospace;
   font-size: 0.93em;
