@@ -14,15 +14,12 @@ The site should be:
 
 ## Chosen Stack
 
+- Framework: Astro 6 static site
 - Hosting: GitHub Pages
-- Content format: Markdown posts
-- Comments and auth: Supabase
-- Auth providers planned:
-  - Google
-  - Microsoft
-  - GitHub
-  - X/Twitter
-  - Facebook
+- Content format: Markdown content collections (Zod-validated frontmatter)
+- Comments: off-site via Substack and LinkedIn, with curated "Responses" block on-site for SEO
+- Typography: Fraunces (display), Source Serif 4 (body), Josefin Sans (UI)
+- No client-side backend, no Supabase
 
 ## Content Scope
 
@@ -148,27 +145,15 @@ Each Markdown post should support at least:
 
 This model should be designed so recovered WordPress content can later be mapped into it.
 
-## Comments and Auth
+## Comments
 
-Comments should be backed by Supabase and tied to stable post identifiers such as slug.
+Comments happen off-site on Substack and LinkedIn. Selected responses are curated into each post's frontmatter (`responses[]` array) and rendered on-site as a "Responses" block for SEO and quality signal.
 
-Requirements:
-
-- Browser-safe public auth configuration only in frontend code
-- No secrets committed to the public repository
-- Security enforced through Supabase policies
-- Social login support through the chosen providers
+No on-site comment system, no authentication, no Supabase.
 
 ## Hosting Notes
 
-GitHub Pages was chosen because it is ultra-cheap and simple.
-
-This means:
-
-- The repository can be public
-- Frontend code must never include secrets
-- Public keys/config intended for browser use are acceptable
-- Any privileged behavior should remain outside the static frontend
+GitHub Pages was chosen because it is ultra-cheap and simple. The repository is private.
 
 ## Future Migration
 

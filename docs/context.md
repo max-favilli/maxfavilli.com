@@ -8,39 +8,24 @@ The current plan is to rebuild the blog as a static website that can be created 
 
 ## Key Decisions Made
 
-- The blog will be built as a static website
-- Hosting choice: GitHub Pages
-- Comment/auth backend: Supabase
-- Posts will be written in Markdown
+- The blog will be built as a static Astro 6 site with Markdown content collections
+- Hosting choice: GitHub Pages (private repo)
+- Comments: off-site (Substack + LinkedIn), curated "Responses" block on-site
+- No on-site comment system, no Supabase, no client-side backend
+- Typography: Fraunces + Source Serif 4 + Josefin Sans ("Editorial Signal" brief)
 
 ## Why This Direction
 
-This setup was chosen because it should be:
+This setup was chosen because it is:
 
-- Ultra-cheap
-- Practical to maintain
-- Suitable for collaborative updates in Claude or Codex
-- Flexible enough to migrate old WordPress content later
+- Ultra-cheap (GitHub Pages hosting)
+- Practical to maintain via Claude Code or Codex sessions
 - Good for SEO and long-term ownership of content
+- Flexible enough to migrate old WordPress content (done — original posts recovered from WP dump)
 
-## Comments and Authentication Requirements
+## Comments
 
-The site should support user comments.
-
-Authentication should ideally support:
-
-- Google
-- Microsoft
-- GitHub
-- X/Twitter
-- Facebook
-
-The repo may be public, so security constraints are important:
-
-- No secrets in the repository
-- No private tokens committed
-- No Supabase service-role or admin credentials in frontend code
-- Security should rely on proper backend/auth rules, not hidden client-side config
+Comments happen off-site on Substack and LinkedIn. Selected high-quality responses are curated into each post's frontmatter (`responses[]` array) and rendered on-site for SEO and quality signal. No on-site comment system or authentication.
 
 ## Publishing and Career Goals
 
