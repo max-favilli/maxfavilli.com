@@ -13,6 +13,7 @@ coverImage: ../../assets/posts/ai-adoption-plan.jpg
 coverAlt: Editorial cartoon of an office. A cheerful manager hands out glowing AI license cards from a cardboard box to a long queue of employees who walk away staring at their cards, while beside them a small team at a whiteboard works through a five-step plan — people, use cases, priorities, training, rollout — that nobody in the queue is looking at.
 thumbImage: ../../assets/posts/ai-adoption-plan-thumb.jpg
 description: AI rollouts fail as procurement exercises. The research on why — and the few weeks of planning that separate volume from value.
+linkedinUrl: https://www.linkedin.com/posts/maxfavilli_ai-changemanagement-itleadership-share-7498442345542017024-XLQA
 draft: false
 ---
 
