@@ -7,25 +7,17 @@
 
 ## Post body
 
-Steve Eisman says SaaS is in trouble. SAP's CEO says the moat holds. Bessemer says the moat is gone.
+𝗧𝗵𝗲 𝗦𝗮𝗮𝗦-𝗽𝗼𝗰𝗮𝗹𝘆𝗽𝘀𝗲 𝗶𝘀 𝗿𝗲𝗮𝗹. 𝗜 𝘁𝗵𝗶𝗻𝗸 𝗶𝘁 𝗲𝗻𝗱𝘀 𝘄𝗶𝘁𝗵 𝗦𝗔𝗣 𝗯𝗶𝗴𝗴𝗲𝗿, 𝗻𝗼𝘁 𝘀𝗺𝗮𝗹𝗹𝗲𝗿.
 
-They are all right. They are looking at different moats.
+$300 billion of software value vanished in a single session this February. Everyone read it as the end of enterprise software.
 
-The SaaS-pocalypse debate conflates two things:
+I read it as a 19th-century economics paper.
 
-1. The knowledge moat — decades of process logic behind the walled garden. Implementation guides, configuration rules, edge cases documented one painful project at a time. Only SAP's AI has access to SAP's material. AI makes this moat MORE valuable, not less.
+Cheaper implementation doesn't shrink SAP's market. It opens the half of it that could never afford S/4.
 
-2. The friction moat — implementation cost, historically 2-5x the license fee. AI is demolishing it. But look who was collecting that toll: not SAP. The system integrators were.
+Somebody does pay for this. It isn't SAP.
 
-Now apply the Jevons paradox: when the cost of using a resource falls, consumption rises. Implementation cost was the biggest reason mid-size companies never bought S/4. If it collapses, SAP's market expands — onto an intact knowledge moat.
-
-The compression lands on the SI headcount pyramid instead. That industry already knows: Cognizant reports 47% of sales on outcome-based contracts. When the people who sell effort stop pricing by effort, believe them.
-
-One caveat: friction was also a switching cost. Cheaper implementation means cheaper to leave, too. The market gets bigger while the walls get thinner for everyone.
-
-Investment takeaway: don't short "SaaS" as a category. Sort by moat type. The average is what you short. The moats are what you own.
-
-Full analysis on the blog — link in first comment.
+Link in the first comment.
 
 #AI #SaaS #EnterpriseSoftware #Investing
 
