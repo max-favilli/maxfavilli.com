@@ -45,3 +45,16 @@ If a request would push the site away from any of these, say so before acting.
 - Source of truth: this repo. Posts are cross-posted *from* here to Substack and LinkedIn manually.
 - Each post's frontmatter can set `substackUrl`, `linkedinUrl`, and a curated `responses[]` array (see schema in `src/content.config.ts`).
 - When generating post bodies from external sources (Wayback scrapes, WP dumps), always flag to the user that the reconstructed text should be reviewed before publishing — it is a draft, not the user's words.
+
+## Cover images — always part of the handover
+
+Every time you hand over a draft post and its accompanying LinkedIn text, also hand over an image-generation prompt for the cover.
+
+Before writing that prompt, **ask the user questions interactively** (AskUserQuestion) to:
+- check the concept you have in mind is one he actually likes,
+- ask for his own ideas for the image,
+- settle the concrete visual decisions (what the metaphor is, how abstract vs. literal, tone, what any text/labels say).
+
+Then write the prompt from his answers, not from your first idea. If his concept and the post's argument pull in different directions, say so in one sentence and offer a version that serves both — his call.
+
+Prompts should match the site's established cover style: editorial cartoon, hand-drawn ink and watercolour on warm cream paper, muted terracotta and olive accents, subtle humour, minimal text. Ask for a wide 16:9 cover and a square variant (square is the one used for LinkedIn).

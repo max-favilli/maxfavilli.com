@@ -10,6 +10,7 @@ Planned changes for maxfavilli.com, roughly prioritized.
 | The SaaS-pocalypse and the Jevons paradox | Sep 1 (Tue) | draft | — | draft ready |
 | The demand signal that broke a fraud system | Sep 3 (Thu) | draft | — | — |
 | We are measuring AI productivity wrong | Sep 8 (Tue) | draft | — | — |
+| A great lecture, wrongly titled | TBD | draft | — | — |
 
 All four drafts need: Max's review/edit, real cover image (placeholders in place, coverAlt describes intended cartoon). Research notes for the SaaS-pocalypse series: docs/saas-pocalypse-research.md. Possible fifth post: the skepticism gap ("why my CFO doesn't believe me") — teased at the end of the demand-signal post.
 

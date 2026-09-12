@@ -10,15 +10,14 @@ tags:
   - investing
   - jevonsparadox
   - enterprisesoftware
-coverImage: ../../assets/posts/ai-build-vs-buy.png
-coverAlt: Two castle walls around an enterprise software fortress — an inner wall of accumulated knowledge still standing, an outer wall of implementation cost crumbling, while a growing crowd of new customers streams through the breach.
+coverImage: ../../assets/posts/saas-pocalypse-jevons.png
+coverAlt: Editorial cartoon of a standoff. On the left a young developer at a laptop surrounded by glowing AI agent windows, wearing a t-shirt reading SaaS-pocalypse, looking disappointed. On the right an enterprise software consultant stands on an island encircled by a moat of stacked books, binders and scrolls, waving an SAP banner, looking confident but concerned.
 description: Two moats get conflated in the SaaS-pocalypse debate — knowledge and friction. AI destroys one and strengthens the other, and Jevons decides the winners.
-draft: true
+thumbImage: ../../assets/posts/saas-pocalypse-jevons-thumb.png
+draft: false
 ---
 
-<!-- TODO: replace placeholder cover image -->
-
-In February the market wiped out $300 billion of software value in a single session, and someone coined the word SaaS-pocalypse. I follow Steve Eisman — the Big Short investor — and his version of the thesis is the cleanest: AI agents replace seat-based software, so seat-based revenue is in trouble; and the AI vendors themselves have no moats, so a price war is coming for them too.
+In February the market wiped out $300 billion of software value in a single session, and someone coined the word SaaS-pocalypse. I follow Steve Eisman — [the Big Short investor](https://en.wikipedia.org/wiki/The_Big_Short_(film)) — and [his version of the thesis](https://www.cnbc.com/2026/08/13/big-short-investor-steve-eisman-sees-an-achilles-heel-in-the-ai-boom.html) is the cleanest: AI agents replace seat-based software, so seat-based revenue is in trouble; and the AI vendors themselves [have no moats](https://247wallst.com/investing/2026/08/04/id-be-petrified-steve-eisman-says-cheap-chinese-ai-models-could-wreck-openai-and-anthropics-valuations/), so a price war is coming for them too.
 
 I made my version of the first half in [The Future of AI — part 2](/posts/the-future-of-ai-part-2/): the build-vs-buy line is moving back toward build, because AI collapsed the cost of building. What I want to add here is about the second half — the moats. Because the loudest voices in this debate contradict each other, and I think they are all right.
 
