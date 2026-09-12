@@ -14,6 +14,7 @@ coverImage: ../../assets/posts/saas-pocalypse-jevons.png
 coverAlt: Editorial cartoon of a standoff. On the left a young developer at a laptop surrounded by glowing AI agent windows, wearing a t-shirt reading SaaS-pocalypse, looking disappointed. On the right an enterprise software consultant stands on an island encircled by a moat of stacked books, binders and scrolls, waving an SAP banner, looking confident but concerned.
 description: Two moats get conflated in the SaaS-pocalypse debate — knowledge and friction. AI destroys one and strengthens the other, and Jevons decides the winners.
 thumbImage: ../../assets/posts/saas-pocalypse-jevons-thumb.png
+linkedinUrl: https://www.linkedin.com/posts/maxfavilli_ai-saas-enterprisesoftware-share-7504530149011324928-Za7w
 draft: false
 ---
 
