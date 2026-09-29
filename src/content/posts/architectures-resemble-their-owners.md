@@ -13,6 +13,7 @@ coverImage: ../../assets/posts/conway-dog.jpg
 coverAlt: Editorial cartoon set in an office. A man stands at a whiteboard drawing a software architecture diagram of boxes and arrows, part of which unmistakably forms the head and pointed ears of a dog. A scruffy dog lies asleep on the floor beneath the board. A second man, seated at the table with a notepad, has turned round in his chair to stare at the real dog with a baffled expression.
 thumbImage: ../../assets/posts/conway-dog-thumb.jpg
 description: Conway's Law, who actually said it, and why the org chart is an architectural decision you are making whether you intend to or not.
+linkedinUrl: https://www.linkedin.com/posts/maxfavilli_architecture-itleadership-softwareengineering-share-7510682527481864194-reaK
 draft: false
 ---
 
