@@ -2,43 +2,33 @@
 # Date: 2026-04-20
 # Repo: https://github.com/max-favilli/ai-investing-prompts
 #
-# Formatting notes:
-# - Bold text marked [BOLD]
-# - Link goes in FIRST COMMENT
-# - Best posting time: Tuesday-Thursday 7-9am CET
+# Link goes in FIRST COMMENT
+# Best posting time: Tuesday-Thursday 7-9am CET
 
 ## Post body
 
-Nine months ago I built a set of structured prompts to screen stocks using AI. A Buffett-Munger value framework, a behavioral sentiment overlay, batch scoring to CSV. I ran them in parallel on Claude, ChatGPT, and Gemini.
+Open-sourced a set of structured prompts for AI-assisted stock analysis.
 
-Then I gave up.
+Two frameworks, both scoring 0-100:
 
-The results were inconsistent across models. The same stock, the same prompt, three different conclusions. I could not trust any of them enough to put money behind the output. I never bought a single stock using these prompts.
+1. Buffett-Munger value analysis — Moat, Management, Financial Health, Capital Allocation, Growth, Fair Price
 
-But the idea still feels right. The prompts encode real investment frameworks — moat analysis, capital allocation scoring, narrative vs. fundamentals separation — into repeatable, scorable checklists. The problem was not the frameworks. The problem was that [BOLD]I could not get the models to apply them reliably[/BOLD].
+2. Behavioral sentiment analysis — Narrative, Sentiment, Momentum, Flows, Volatility, Irrationality Index, Catalysts
 
-So I am open-sourcing the whole thing.
+The two scores together tell you what a business is worth and what the crowd is doing to its price. High Buffett + low Sentiment = great business the crowd is ignoring. Low Buffett + high Sentiment = trap.
 
-The repo includes:
-- A Buffett-Munger 6-axis value analysis prompt (scores 0-100)
-- A behavioral sentiment analysis prompt (scores 0-100 + Irrationality Index)
-- A Claude Code plugin with skills for single-stock analysis and batch screening
-- Built-in guardrails: the prompts force the AI to write [NOT VERIFIED] instead of fabricating numbers
+Works with any AI model (copy-paste the prompt), or install as a Claude Code plugin and run /buffett AAPL or /screen to batch-compare your watchlist to CSV.
 
-[BOLD]What I want to know:[/BOLD]
+Built-in guardrails: the prompts force the AI to write [NOT VERIFIED] instead of making up numbers, cite sources, and flag uncertainty.
 
-Has anyone had success using AI to systematically screen stocks? Not "ask ChatGPT what to buy" — I mean structured, repeatable analysis with scoring systems. What worked? What did not? What made the output trustworthy enough to act on?
+Open for contributions — new frameworks, better prompts, fewer hallucinations.
 
-If you are interested in making these prompts better — testing against real portfolios, adding new frameworks, reducing hallucinations — the repo is open for contributions.
+Repo in the first comment.
 
-Link in the first comment.
-
-#AI #Investing #OpenSource #ValueInvesting #FinTech
+#AI #Investing #OpenSource #ValueInvesting
 
 ## First comment
 
 Repo: https://github.com/max-favilli/ai-investing-prompts
 
-The prompts work with any AI model (copy-paste). The Claude Code plugin adds slash commands like /buffett AAPL and /screen for batch analysis.
-
-Contributions welcome — especially from anyone who has actually tested AI stock screening against real outcomes.
+Works with ChatGPT, Claude, Gemini, or any LLM. Contributions welcome.

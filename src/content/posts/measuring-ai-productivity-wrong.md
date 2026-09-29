@@ -1,7 +1,7 @@
 ---
 title: We are measuring AI productivity wrong
 slug: measuring-ai-productivity-wrong
-pubDate: 2026-09-08
+pubDate: 2026-09-16
 summary: The studies say AI makes developers 10% faster, or even slower. My experience says weeks became half a day. Both are true — because the studies measure effort, and the change is in outcomes.
 category: AI
 tags:

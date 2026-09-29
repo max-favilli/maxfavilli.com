@@ -27,6 +27,20 @@ Don't be preachy, don't lecture, don't list every caveat. One or two sentences o
 
 If a request would push the site away from any of these, say so before acting.
 
+## Write for clarity; brevity follows
+
+Clarity is the goal, not word count. Cutting for its own sake produces prose the reader must reconstruct, and a sentence that saves four words but forces a re-read has cost more than it saved.
+
+**Cut:** hedges that hedge nothing, intensifiers, throat-clearing ("it is worth noting that"), restating a point just made, signposting the reader can see, and abstract nouns with a verb trapped inside them (*make a decision* → *decide*).
+
+**Keep:** the qualification that makes a claim true, the example that makes an abstraction land, the connective tissue between two ideas, and the caveat that pre-empts the obvious objection.
+
+**The test:** remove a word. If meaning, precision and ease of following are all unchanged, it was needless. If anything shifts, put it back. Not "can this be shorter" but "does this word do work".
+
+The hard cuts are good sentences that are not carrying the argument. That is where the time goes.
+
+Applies to blog prose. LinkedIn runs on a different rhythm — isolated lines, deliberate fragments — and that is not a violation of this.
+
 ## Code-level preferences
 
 - Keep components small and typed. Frontmatter changes go through `src/content.config.ts` (Zod schema).
