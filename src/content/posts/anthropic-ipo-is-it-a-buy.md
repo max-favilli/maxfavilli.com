@@ -13,6 +13,7 @@ coverImage: ../../assets/posts/anthropic-ipo.png
 coverAlt: Two-panel editorial cartoon. On the left, a stock exchange listing ceremony — an executive rings a brass bell at a podium amid confetti, cheering bankers and a share price line climbing on the screen behind. On the right, a quiet Chinese research lab with server racks, a national flag on the wall, the Shanghai skyline at dusk through the window, and three engineers working at their monitors while a small wall screen shows the ceremony none of them is watching.
 thumbImage: ../../assets/posts/anthropic-ipo-thumb.png
 description: The loudest bear case on the year's biggest listing. What holds up, what does not, and what business payment data actually shows.
+linkedinUrl: https://www.linkedin.com/posts/maxfavilli_ai-anthropic-investing-share-7511328763280855040-OiFc
 draft: false
 ---
 
