@@ -51,6 +51,11 @@ Prefer the concrete and operational over the abstract and evaluative. Prefer the
 
 A vivid compressed phrase may stay, but cash it out in the next clause rather than leaving the reader holding it: *"...to the thing they were meant to postpone. You buy one instead of a BEV, and you tell yourself you'll go electric next time."*
 
+A compressed phrase earns its place only if it does something the plain version cannot — a turn, an image, a line worth remembering. If it is only an abstract name for what the next clause states plainly, cut the name and keep the clause.
+
+**The test for signposting** (Williams calls it metadiscourse — language about the writing rather than about the subject): remove it and ask whether the reader is ever confused or has to read twice. Guiding language orients across distance, signals structure the reader cannot yet see, or marks a turn they would otherwise miss. Language that points at the clause immediately after it is not guiding, it is narrating a move the reader is already making.
+
+
 ## Code-level preferences
 
 - Keep components small and typed. Frontmatter changes go through `src/content.config.ts` (Zod schema).
