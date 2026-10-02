@@ -41,6 +41,16 @@ The hard cuts are good sentences that are not carrying the argument. That is whe
 
 Applies to blog prose. LinkedIn runs on a different rhythm — isolated lines, deliberate fragments — and that is not a violation of this.
 
+## Say the thing, not the label for the thing
+
+Compression is not concision. "The sensible middle ground" is shorter than "you get part of the benefit without depending on chargers or worrying about range" — and less clear, because it makes the reader reconstruct the meaning. Minimise reader effort, not word count.
+
+**The test:** if you would have to explain a phrase to someone who asked what it meant, the explanation belongs in the text and the phrase does not.
+
+Prefer the concrete and operational over the abstract and evaluative. Prefer the number to the verb gesturing at it — "peaked at 38.7% in February 2026" beats "topped out in February".
+
+A vivid compressed phrase may stay, but cash it out in the next clause rather than leaving the reader holding it: *"...to the thing they were meant to postpone. You buy one instead of a BEV, and you tell yourself you'll go electric next time."*
+
 ## Code-level preferences
 
 - Keep components small and typed. Frontmatter changes go through `src/content.config.ts` (Zod schema).
