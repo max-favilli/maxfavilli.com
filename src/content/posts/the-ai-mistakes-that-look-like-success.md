@@ -17,7 +17,7 @@ draft: true
 
 <!-- TODO: cover image concept still to be agreed -->
 
-My teams use AI agents across the whole of what we do, from gathering requirements to troubleshooting production, and the speed is real. What I did not have was an honest account of how much review it demands, and from whom.
+My teams use AI agents across the whole of what we do, from gathering requirements to troubleshooting production, and the speed is real. What I did not have was an honest account of how much human supervision it still needs, and at which points. Not as a fixed number — that line moves every few months — but as a reading of where it sits today.
 
 So I asked the agent to audit itself. Go back through a month of work, list every mistake, define what counts as one, attach a severity to each. Not a reflection. An audit.
 
@@ -68,6 +68,16 @@ Two questions did most of the work, and neither needs expertise in the thing bei
 **"How possibly?"** Not "are you sure?", which invites reassurance and gets it. Asking for a mechanism is different. Anyone can restate a conclusion with confidence; a mechanism can be checked, and an agent that cannot produce one usually works out why while trying.
 
 **"Explain it in simple terms."** This looks like a request for accessibility. It works as an error detector. Compressed technical language hides unjustified steps; plain English does not. Four wrong claims collapsed when the agent was asked for the simple version — including one where a ten-to-fifteen-minute operation turned out to take about seven seconds. Wrong by two orders of magnitude, and already written into a plan as a constraint.
+
+## Where the supervision falls
+
+A year ago the agents took functions and fixes. Now they take whole features end to end, they investigate — reading telemetry, forming and discarding hypotheses, finding why something broke rather than fixing what you point them at — and they touch infrastructure rather than only source files. The boundary moved in three directions at once: scope, kind, and blast radius.
+
+The surprise is what that did to the human side. Specification went up, not down. Each individual brief is lighter than it would have been a year ago. But the pieces being handed over are much bigger, and the second effect is larger than the first.
+
+The supervision that remains is also not evenly spread. The phase that needs a human closest is design — deciding the shape of a thing, and which layer a change belongs in. That is the one part nobody can do without the whole system in their head, which makes it the part you cannot staff your way out of.
+
+So the gain does not free senior time. It concentrates demand on it.
 
 ## What we changed
 
