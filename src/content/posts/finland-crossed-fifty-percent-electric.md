@@ -12,6 +12,7 @@ tags:
 coverImage: ../../assets/posts/bev-share-sep-2026.png
 coverAlt: Small-multiple area charts of monthly new car registrations from January to September 2026, battery-electric against everything else, for Norway, Denmark, Finland, Sweden, France, Germany, Spain, Italy and China. Latest battery-electric shares range from 98.8 percent in Norway to 7.6 percent in Italy.
 description: Battery-electric share of new cars in nine markets, January to September 2026, from national registration data.
+linkedinUrl: https://www.linkedin.com/posts/maxfavilli_ev-electricvehicles-europe-share-7514000026595983361-UUHE
 draft: false
 ---
 
